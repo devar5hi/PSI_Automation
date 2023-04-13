@@ -10,4 +10,4 @@ Feature: Verify Admin login functionality
 
     Examples: 
       | Username             | Password |
-      | dshah@parkstreet.com | Test12312234 |
+      | dshah@parkstreet.com | Test1234 |

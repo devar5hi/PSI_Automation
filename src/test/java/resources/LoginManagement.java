@@ -1,22 +1,15 @@
 package resources;
 
 import java.io.IOException;
-import java.time.Duration;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginManagement {
 	//static WebElement loginmsg;
 	
-	public static String Member_Username = "harsh.shah@aecordigital.com";
-	public static String Member_Password = "Abc@1234";
-	public static String Member_Username2 = "QAYScalybee@gmail.com";
-	public static String Member_Username3 = "QAXScalybee@gmail.com";
-	public static String pateldmin_Username = "pateladmin@gmail.com";
+
 	
 	public static void LoginPage() throws IOException, InterruptedException
 	{
@@ -76,44 +69,8 @@ public class LoginManagement {
 		}
 	}
 	
-	public static void MemberLogin() throws IOException, InterruptedException
-	{
-		Thread.sleep(2000);
-		((JavascriptExecutor)DriverUtils.driver).
-		executeScript("alert('Enter credentials...');");
-	    Thread.sleep(3000);
-	    DriverUtils.driver.switchTo().alert().accept();
-		Thread.sleep(1000);
-		DriverUtils.driver.navigate().to(DriverUtils.getlink("Community_Login_Page"));
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Email"))).sendKeys(Member_Username);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Password"))).sendKeys(Member_Password);
-		
-		
-	}
 	
-	public static void AnotherMemberLogin() throws IOException, InterruptedException
-	{
-		DriverUtils.driver.navigate().to(DriverUtils.getlink("Community_Login_Page"));
-		Thread.sleep(3000);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Email"))).sendKeys(Member_Username2);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Password"))).sendKeys(Member_Password);
-	}
 	
-	public static void GeneralLogin() throws IOException, InterruptedException
-	{
-		//Member_Username3
-		DriverUtils.driver.navigate().to(DriverUtils.getlink("Community_Login_Page"));
-		Thread.sleep(3000);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Email"))).sendKeys(Member_Username3);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Password"))).sendKeys(Member_Password);
-	}
 	
-	public static void PatelAdminLogin() throws InterruptedException, IOException
-	{
-		DriverUtils.driver.navigate().to(DriverUtils.getlink("Community_Login_Page"));
-		Thread.sleep(3000);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Email"))).sendKeys(pateldmin_Username);
-		DriverUtils.driver.findElement(By.xpath(DriverUtils.getloc("Login_Password"))).sendKeys(Member_Password);
-	}
 
 }
